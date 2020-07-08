@@ -1,0 +1,667 @@
+{"timestamp": "2020-07-07 21:17:05.494187", "method": "GET", "path": "/v1/biosamples?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+Exception on /v1/biosamples [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/decorator.py", line 48, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/uri_parsing.py", line 144, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/response.py", line 103, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/parameter.py", line 121, in wrapper
+    return function(**kwargs)
+  File "<decorator-gen-2>", line 2, in get_biosamples
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/logging.py", line 59, in apilog
+    return func(*args, **kwargs)
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/operations.py", line 111, in get_biosamples
+    q = db_session.query(Biosample).filter(Biosample.Dataset.name == dataset)
+AttributeError: type object 'Biosample' has no attribute 'Dataset'
+{"timestamp": "2020-07-07 21:17:35.146040", "method": "GET", "path": "/v1/biosamples?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+Exception on /v1/biosamples [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/orm/attributes.py", line 229, in __getattr__
+    return getattr(self.comparator, key)
+AttributeError: 'Comparator' object has no attribute 'name'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/decorator.py", line 48, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/uri_parsing.py", line 144, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/response.py", line 103, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/parameter.py", line 121, in wrapper
+    return function(**kwargs)
+  File "<decorator-gen-2>", line 2, in get_biosamples
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/logging.py", line 59, in apilog
+    return func(*args, **kwargs)
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/operations.py", line 111, in get_biosamples
+    q = db_session.query(Biosample).filter(Biosample.dataset.name == dataset)
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/orm/attributes.py", line 242, in __getattr__
+    replace_context=err,
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 178, in raise_
+    raise exception
+AttributeError: Neither 'InstrumentedAttribute' object nor 'Comparator' object associated with Biosample.dataset has an attribute 'name'
+{"timestamp": "2020-07-07 21:28:16.302782", "method": "GET", "path": "/v1/biosamples?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-07 21:28:16.388262", "action": "biosample search failed", "exception": "Mapped instance expected for relationship comparison to object.   Classes, queries and other SQL elements are not accepted in this context; for comparison with a subquery, use Biosample.dataset.has(**criteria)."}
+{"timestamp": "2020-07-07 21:32:02.409020", "method": "GET", "path": "/v1/biosamples?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+Exception on /v1/biosamples [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/decorator.py", line 48, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/uri_parsing.py", line 144, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/response.py", line 103, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/parameter.py", line 121, in wrapper
+    return function(**kwargs)
+  File "<decorator-gen-2>", line 2, in get_biosamples
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/logging.py", line 59, in apilog
+    return func(*args, **kwargs)
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/operations.py", line 111, in get_biosamples
+    q = db_session.query(Biosample).filter(Biosample.dataset.has(name == dataset))
+NameError: name 'name' is not defined
+{"timestamp": "2020-07-07 21:32:35.291742", "method": "GET", "path": "/v1/biosamples?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-07 21:35:07.993476", "method": "GET", "path": "/v1/biosamples?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-07 21:36:00.659780", "method": "GET", "path": "/v1/biosamples?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-07 21:37:02.380923", "method": "GET", "path": "/v1/biosamples?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-07 21:37:59.443086", "method": "GET", "path": "/v1/biosamples?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-07 21:38:30.263929", "method": "GET", "path": "/v1/biosamples?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 08:40:58.534083", "method": "GET", "path": "/v1/biosamples?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 08:46:57.349343", "method": "GET", "path": "/v1/biosamples?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 08:47:40.289081", "method": "GET", "path": "/v1/biosamples?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 10:22:21.257803", "method": "GET", "path": "/v1/biosamples/3?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+Exception on /v1/biosamples/3 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/orm/attributes.py", line 229, in __getattr__
+    return getattr(self.comparator, key)
+AttributeError: 'Comparator' object has no attribute 'name'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/decorator.py", line 48, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/uri_parsing.py", line 144, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/validation.py", line 384, in wrapper
+    return function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/response.py", line 103, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/parameter.py", line 121, in wrapper
+    return function(**kwargs)
+  File "<decorator-gen-3>", line 2, in get_one_biosample
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/logging.py", line 59, in apilog
+    return func(*args, **kwargs)
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/operations.py", line 144, in get_one_biosample
+    q = db_session.query(orm_biosample).filter(orm_biosample.dataset.name(in_(authzed_datasets))).get(biosample_id)
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/orm/attributes.py", line 242, in __getattr__
+    replace_context=err,
+  File "/usr/local/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 178, in raise_
+    raise exception
+AttributeError: Neither 'InstrumentedAttribute' object nor 'Comparator' object associated with Biosample.dataset has an attribute 'name'
+{"timestamp": "2020-07-08 10:29:04.440706", "method": "GET", "path": "/v1/biosamples/3?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+Exception on /v1/biosamples/3 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/decorator.py", line 48, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/uri_parsing.py", line 144, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/validation.py", line 384, in wrapper
+    return function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/response.py", line 103, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/parameter.py", line 121, in wrapper
+    return function(**kwargs)
+  File "<decorator-gen-3>", line 2, in get_one_biosample
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/logging.py", line 59, in apilog
+    return func(*args, **kwargs)
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/operations.py", line 144, in get_one_biosample
+    authzed = q.filter(orm_biosample.dataset.has(name==dataset)).get(biosample_id)
+NameError: name 'name' is not defined
+{"timestamp": "2020-07-08 10:29:26.557067", "method": "GET", "path": "/v1/biosamples/3?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+Exception on /v1/biosamples/3 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/decorator.py", line 48, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/uri_parsing.py", line 144, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/validation.py", line 384, in wrapper
+    return function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/response.py", line 103, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/parameter.py", line 121, in wrapper
+    return function(**kwargs)
+  File "<decorator-gen-3>", line 2, in get_one_biosample
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/logging.py", line 59, in apilog
+    return func(*args, **kwargs)
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/operations.py", line 144, in get_one_biosample
+    authzed = q.filter(orm_biosample.biosample.dataset.has(name==dataset)).get(biosample_id)
+AttributeError: type object 'Biosample' has no attribute 'biosample'
+{"timestamp": "2020-07-08 10:29:46.918721", "method": "GET", "path": "/v1/biosamples/3?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 10:29:46.997355", "action": "biosample search failed", "exception": "Query.get() being called on a Query with existing criterion. ", "var_id": "3"}
+{"timestamp": "2020-07-08 10:30:39.391411", "method": "GET", "path": "/v1/biosamples/3?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 11:47:48.880996", "method": "GET", "path": "/v1/biosamples/3?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 11:47:48.881960", "method": "GET", "path": "/v1/biosamples/3?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 11:47:48.882180", "action": "No authorization to access biosample objects"}
+{"timestamp": "2020-07-08 11:48:02.189225", "method": "GET", "path": "/v1/enrollments/3?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 11:48:02.189520", "method": "GET", "path": "/v1/enrollments/3?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 11:48:02.189745", "action": "No authorization to access enrollment objects"}
+{"timestamp": "2020-07-08 11:48:09.566403", "method": "GET", "path": "/v1/biosamples/3?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 11:48:09.566660", "method": "GET", "path": "/v1/biosamples/3?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 11:48:09.566855", "action": "No authorization to access biosample objects"}
+{"timestamp": "2020-07-08 11:48:43.206996", "method": "GET", "path": "/v1/biosamples/3?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 11:48:43.207296", "method": "GET", "path": "/v1/biosamples/3?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 11:48:51.770880", "method": "GET", "path": "/v1/enrollments/3?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 11:48:51.771132", "method": "GET", "path": "/v1/enrollments/3?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 11:48:51.771326", "action": "No authorization to access enrollment objects"}
+{"timestamp": "2020-07-08 11:59:11.541094", "method": "GET", "path": "/v1/enrollments/3?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 11:59:11.541437", "method": "GET", "path": "/v1/enrollments/3?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 12:00:52.026011", "method": "GET", "path": "/v1/enrollments/3?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 12:00:52.026295", "method": "GET", "path": "/v1/enrollments/3?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 12:02:08.407035", "method": "GET", "path": "/v1/enrollments/3?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 12:02:08.407615", "method": "GET", "path": "/v1/enrollments/3?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 12:02:42.078376", "method": "GET", "path": "/v1/biosamples/3?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 12:02:42.079023", "method": "GET", "path": "/v1/biosamples/3?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 12:03:10.610064", "method": "GET", "path": "/v1/biosamples/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 12:03:10.610405", "method": "GET", "path": "/v1/biosamples/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 12:03:17.647182", "method": "GET", "path": "/v1/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 12:03:17.648002", "method": "GET", "path": "/v1/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 12:03:27.587059", "method": "GET", "path": "/v1/patients/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 12:03:27.587370", "method": "GET", "path": "/v1/patients/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+Exception on /v1/patients/ [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/decorator.py", line 48, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/uri_parsing.py", line 144, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/response.py", line 103, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/parameter.py", line 121, in wrapper
+    return function(**kwargs)
+  File "<decorator-gen-8>", line 2, in get_patients
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/logging.py", line 59, in apilog
+    return func(*args, **kwargs)
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/operations.py", line 194, in get_patients
+    return list_items(orm_patient, api_patient, 'patient')
+  File "<decorator-gen-2>", line 2, in list_items
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/logging.py", line 59, in apilog
+    return func(*args, **kwargs)
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/operations.py", line 132, in list_items
+    results = results + [api_class(**orm.dump(p, fields=columns)) for p in q]
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/operations.py", line 132, in <listcomp>
+    results = results + [api_class(**orm.dump(p, fields=columns)) for p in q]
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/orm/__init__.py", line 93, in dump
+    return {k: vars(obj)[k] for k in selected_fields}
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/orm/__init__.py", line 93, in <dictcomp>
+    return {k: vars(obj)[k] for k in selected_fields}
+KeyError: 'dataOfBirth'
+{"timestamp": "2020-07-08 12:04:56.474653", "method": "GET", "path": "/v1/patients/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 12:04:56.474984", "method": "GET", "path": "/v1/patients/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+Exception on /v1/patients/ [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/decorator.py", line 48, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/uri_parsing.py", line 144, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/response.py", line 103, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/parameter.py", line 121, in wrapper
+    return function(**kwargs)
+  File "<decorator-gen-8>", line 2, in get_patients
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/logging.py", line 59, in apilog
+    return func(*args, **kwargs)
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/operations.py", line 194, in get_patients
+    return list_items(orm_patient, api_patient, 'patient')
+  File "<decorator-gen-2>", line 2, in list_items
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/logging.py", line 59, in apilog
+    return func(*args, **kwargs)
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/operations.py", line 132, in list_items
+    results = results + [api_class(**orm.dump(p, fields=columns)) for p in q]
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/operations.py", line 132, in <listcomp>
+    results = results + [api_class(**orm.dump(p, fields=columns)) for p in q]
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/orm/__init__.py", line 93, in dump
+    return {k: vars(obj)[k] for k in selected_fields}
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/orm/__init__.py", line 93, in <dictcomp>
+    return {k: vars(obj)[k] for k in selected_fields}
+KeyError: 'dataOfBirth'
+{"timestamp": "2020-07-08 12:04:58.335197", "method": "GET", "path": "/v1/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 12:04:58.335452", "method": "GET", "path": "/v1/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 12:05:34.081877", "method": "GET", "path": "/v1/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 12:05:34.082188", "method": "GET", "path": "/v1/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 12:06:05.083010", "method": "GET", "path": "/v1/patients/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 12:06:05.083286", "method": "GET", "path": "/v1/patients/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+Exception on /v1/patients/ [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/decorator.py", line 48, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/uri_parsing.py", line 144, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/parameter.py", line 121, in wrapper
+    return function(**kwargs)
+  File "<decorator-gen-8>", line 2, in get_patients
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/logging.py", line 59, in apilog
+    return func(*args, **kwargs)
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/operations.py", line 194, in get_patients
+    return list_items(orm_patient, api_patient, 'patient')
+  File "<decorator-gen-2>", line 2, in list_items
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/logging.py", line 59, in apilog
+    return func(*args, **kwargs)
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/operations.py", line 132, in list_items
+    results = results + [api_class(**orm.dump(p, fields=columns)) for p in q]
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/operations.py", line 132, in <listcomp>
+    results = results + [api_class(**orm.dump(p, fields=columns)) for p in q]
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/orm/__init__.py", line 93, in dump
+    return {k: vars(obj)[k] for k in selected_fields}
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/orm/__init__.py", line 93, in <dictcomp>
+    return {k: vars(obj)[k] for k in selected_fields}
+KeyError: 'dataOfBirth'
+{"timestamp": "2020-07-08 12:14:41.468307", "method": "GET", "path": "/v1/patients/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 12:14:41.468645", "method": "GET", "path": "/v1/patients/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 12:22:45.048943", "method": "GET", "path": "/v1/patients/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 12:22:45.049252", "method": "GET", "path": "/v1/patients/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 12:22:51.343382", "method": "GET", "path": "/v1/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 12:22:51.343677", "method": "GET", "path": "/v1/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 12:22:55.344792", "method": "GET", "path": "/v1/biosamples/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 12:22:55.345060", "method": "GET", "path": "/v1/biosamples/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 12:23:37.925251", "method": "GET", "path": "/v1/biosamples/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 12:23:37.925553", "method": "GET", "path": "/v1/biosamples/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 12:23:37.925755", "action": "No authorization to access biosample objects"}
+{"timestamp": "2020-07-08 13:35:33.500771", "method": "GET", "path": "/v1/biosamples/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:35:33.501093", "method": "GET", "path": "/v1/biosamples/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:35:33.501292", "action": "No authorization to access biosample objects"}
+{"timestamp": "2020-07-08 13:35:39.746806", "method": "GET", "path": "/v1/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:35:39.747060", "method": "GET", "path": "/v1/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:35:45.766054", "method": "GET", "path": "/v1/patients/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:35:45.766358", "method": "GET", "path": "/v1/patients/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:35:54.090957", "method": "GET", "path": "/v1/patients/PATIENT_37990?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:35:54.091221", "method": "GET", "path": "/v1/patients/PATIENT_37990?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:36:16.928110", "method": "GET", "path": "/v1/patients/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:36:16.928374", "method": "GET", "path": "/v1/patients/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:36:34.119622", "method": "GET", "path": "/v1/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:36:34.119883", "method": "GET", "path": "/v1/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:36:44.795595", "method": "GET", "path": "/v1/enrollments/WyJtb2NrMiIsImVuciIsIlBBVElFTlRfMzc5OTBfMjAxNy0wMS0xNSJd?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:36:44.795896", "method": "GET", "path": "/v1/enrollments/WyJtb2NrMiIsImVuciIsIlBBVElFTlRfMzc5OTBfMjAxNy0wMS0xNSJd?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:37:51.390655", "method": "GET", "path": "/v1/patients/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:37:51.390952", "method": "GET", "path": "/v1/patients/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:37:57.282154", "method": "GET", "path": "/v1/patients/WyJtb2NrMiIsInBhdCIsIlBBVElFTlRfMzc5OTAiXQ?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:37:57.282434", "method": "GET", "path": "/v1/patients/WyJtb2NrMiIsInBhdCIsIlBBVElFTlRfMzc5OTAiXQ?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:38:01.816545", "method": "GET", "path": "/v1/patients/WyJtb2NrMiIsInBhdCIsIlBBVElFTlRfMzc5OTAiXQ/enrollments?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:38:01.816814", "method": "GET", "path": "/v1/patients/WyJtb2NrMiIsInBhdCIsIlBBVElFTlRfMzc5OTAiXQ/enrollments?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:38:01.817020", "action": "No authorization to access biosample objects"}
+{"timestamp": "2020-07-08 13:38:08.920521", "method": "GET", "path": "/v1/patients/WyJtb2NrMiIsInBhdCIsIlBBVElFTlRfMzc5OTAiXQ/biosamples?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:38:08.920775", "method": "GET", "path": "/v1/patients/WyJtb2NrMiIsInBhdCIsIlBBVElFTlRfMzc5OTAiXQ/biosamples?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:38:08.920975", "action": "No authorization to access biosample objects"}
+{"timestamp": "2020-07-08 13:38:41.563330", "method": "GET", "path": "/v1/patients/WyJtb2NrMiIsInBhdCIsIlBBVElFTlRfMzc5OTAiXQ/enrollments?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:38:41.563627", "method": "GET", "path": "/v1/patients/WyJtb2NrMiIsInBhdCIsIlBBVElFTlRfMzc5OTAiXQ/enrollments?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:38:41.563843", "action": "No authorization to access biosample objects"}
+{"timestamp": "2020-07-08 13:39:02.024202", "method": "GET", "path": "/v1/patients/WyJtb2NrMiIsInBhdCIsIlBBVElFTlRfMzc5OTAiXQ/enrollments?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:39:02.024505", "method": "GET", "path": "/v1/patients/WyJtb2NrMiIsInBhdCIsIlBBVElFTlRfMzc5OTAiXQ/enrollments?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:39:02.024702", "method": "GET", "path": "/v1/patients/WyJtb2NrMiIsInBhdCIsIlBBVElFTlRfMzc5OTAiXQ/enrollments?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:39:07.647260", "method": "GET", "path": "/v1/patients/WyJtb2NrMiIsInBhdCIsIlBBVElFTlRfMzc5OTAiXQ/enrollments?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:39:07.647590", "method": "GET", "path": "/v1/patients/WyJtb2NrMiIsInBhdCIsIlBBVElFTlRfMzc5OTAiXQ/enrollments?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:39:07.647803", "method": "GET", "path": "/v1/patients/WyJtb2NrMiIsInBhdCIsIlBBVElFTlRfMzc5OTAiXQ/enrollments?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:39:16.288681", "method": "GET", "path": "/v1/enrollments/WyJtb2NrMiIsImVuciIsIlBBVElFTlRfMzc5OTBfMjAxNy0wMS?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:39:16.288977", "method": "GET", "path": "/v1/enrollments/WyJtb2NrMiIsImVuciIsIlBBVElFTlRfMzc5OTBfMjAxNy0wMS?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:39:20.486449", "method": "GET", "path": "/v1/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:39:20.486693", "method": "GET", "path": "/v1/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:39:29.735049", "method": "GET", "path": "/v1/enrollments/WyJtb2NrMiIsImVuciIsIlBBVElFTlRfMzc5OTBfMjAxNy0wMS0xNSJd?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:39:29.735281", "method": "GET", "path": "/v1/enrollments/WyJtb2NrMiIsImVuciIsIlBBVElFTlRfMzc5OTBfMjAxNy0wMS0xNSJd?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:40:28.562853", "method": "GET", "path": "/v1/patients/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:40:28.563128", "method": "GET", "path": "/v1/patients/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:40:50.696417", "method": "GET", "path": "/v1/patients/WyJtb2NrMiIsInBhdCIsIlBBVElFTlRfMzc5OTAiXQ/enrollments?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:40:50.696686", "method": "GET", "path": "/v1/patients/WyJtb2NrMiIsInBhdCIsIlBBVElFTlRfMzc5OTAiXQ/enrollments?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:40:50.696874", "method": "GET", "path": "/v1/patients/WyJtb2NrMiIsInBhdCIsIlBBVElFTlRfMzc5OTAiXQ/enrollments?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:40:54.919055", "method": "GET", "path": "/v1/patients/WyJtb2NrMiIsInBhdCIsIlBBVElFTlRfMzc5OTAiXQ/enrollments?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:40:54.919312", "method": "GET", "path": "/v1/patients/WyJtb2NrMiIsInBhdCIsIlBBVElFTlRfMzc5OTAiXQ/enrollments?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:40:54.919506", "method": "GET", "path": "/v1/patients/WyJtb2NrMiIsInBhdCIsIlBBVElFTlRfMzc5OTAiXQ/enrollments?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:41:04.791017", "method": "GET", "path": "/v1/patients/WyJtb2NrMiIsInBhdCIsIlBBVElFTlRfMzc5OTAiXQ?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:41:04.791276", "method": "GET", "path": "/v1/patients/WyJtb2NrMiIsInBhdCIsIlBBVElFTlRfMzc5OTAiXQ?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:45:18.492235", "method": "GET", "path": "/v1/patients/WyJtb2NrMiIsInBhdCIsIlBBVElFTlRfMzc5OTAiXQ?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:45:18.492865", "method": "GET", "path": "/v1/patients/WyJtb2NrMiIsInBhdCIsIlBBVElFTlRfMzc5OTAiXQ?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:46:11.237096", "method": "GET", "path": "/v1/patients/WyJtb2NrMiIsInBhdCIsIlBBVElFTlRfMzc5OTAiXQ/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:46:11.237403", "method": "GET", "path": "/v1/patients/WyJtb2NrMiIsInBhdCIsIlBBVElFTlRfMzc5OTAiXQ/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:46:11.237651", "method": "GET", "path": "/v1/patients/WyJtb2NrMiIsInBhdCIsIlBBVElFTlRfMzc5OTAiXQ/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:46:19.064876", "method": "GET", "path": "/v1/patients/WyJtb2NrMiIsInBhdCIsIlBBVElFTlRfMzc5OTAiXQ/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:46:19.065182", "method": "GET", "path": "/v1/patients/WyJtb2NrMiIsInBhdCIsIlBBVElFTlRfMzc5OTAiXQ/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:46:19.065415", "method": "GET", "path": "/v1/patients/WyJtb2NrMiIsInBhdCIsIlBBVElFTlRfMzc5OTAiXQ/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:46:26.683101", "method": "GET", "path": "/v1/patients/WyJtb2NrMiIsInBhdCIsIlBBVElFTlRfMzc5OTAiXQ?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:46:26.683367", "method": "GET", "path": "/v1/patients/WyJtb2NrMiIsInBhdCIsIlBBVElFTlRfMzc5OTAiXQ?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:47:03.044788", "method": "GET", "path": "/v1/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:47:03.045064", "method": "GET", "path": "/v1/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:47:54.813083", "method": "GET", "path": "/v1/patients/WyJtb2NrMSIsInBhdCIsIlBBVElFTlRfNDY3NDIiXQ?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:47:54.813350", "method": "GET", "path": "/v1/patients/WyJtb2NrMSIsInBhdCIsIlBBVElFTlRfNDY3NDIiXQ?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:48:00.161263", "method": "GET", "path": "/v1/patients/WyJtb2NrMSIsInBhdCIsIlBBVElFTlRfNDY3NDIiXQ/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:48:00.161551", "method": "GET", "path": "/v1/patients/WyJtb2NrMSIsInBhdCIsIlBBVElFTlRfNDY3NDIiXQ/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:48:00.161771", "method": "GET", "path": "/v1/patients/WyJtb2NrMSIsInBhdCIsIlBBVElFTlRfNDY3NDIiXQ/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:48:02.971066", "method": "GET", "path": "/v1/patients/WyJtb2NrMSIsInBhdCIsIlBBVElFTlRfNDY3NDIiXQ/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:48:02.971338", "method": "GET", "path": "/v1/patients/WyJtb2NrMSIsInBhdCIsIlBBVElFTlRfNDY3NDIiXQ/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:48:02.971537", "method": "GET", "path": "/v1/patients/WyJtb2NrMSIsInBhdCIsIlBBVElFTlRfNDY3NDIiXQ/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:48:45.381739", "method": "GET", "path": "/v1/patients/WyJtb2NrMSIsInBhdCIsIlBBVElFTlRfNDY3NDIiXQ/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:48:45.382055", "method": "GET", "path": "/v1/patients/WyJtb2NrMSIsInBhdCIsIlBBVElFTlRfNDY3NDIiXQ/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:48:45.382258", "method": "GET", "path": "/v1/patients/WyJtb2NrMSIsInBhdCIsIlBBVElFTlRfNDY3NDIiXQ/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:48:52.313059", "method": "GET", "path": "/v1/patients/WyJtb2NrMSIsInBhdCIsIlBBVElFTlRfNDY3NDIiXQ/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:48:52.313315", "method": "GET", "path": "/v1/patients/WyJtb2NrMSIsInBhdCIsIlBBVElFTlRfNDY3NDIiXQ/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:48:52.313503", "method": "GET", "path": "/v1/patients/WyJtb2NrMSIsInBhdCIsIlBBVElFTlRfNDY3NDIiXQ/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:57:49.973934", "method": "GET", "path": "/v1/patients/WyJtb2NrMSIsInBhdCIsIlBBVElFTlRfNDY3NDIiXQ/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:57:49.974337", "method": "GET", "path": "/v1/patients/WyJtb2NrMSIsInBhdCIsIlBBVElFTlRfNDY3NDIiXQ/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:57:49.974596", "method": "GET", "path": "/v1/patients/WyJtb2NrMSIsInBhdCIsIlBBVElFTlRfNDY3NDIiXQ/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:57:49.983649", "action": "patient search failed", "exception": "When initializing mapper mapped class Biosample->biosample, expression 'patientId==Patient.patientId' failed to locate a name (\"name 'patientId' is not defined\"). If this is a class name, consider adding this relationship() to the <class 'clinphen_service.orm.models.Biosample'> class after both dependent classes have been defined.", "var_id": "WyJtb2NrMSIsInBhdCIsIlBBVElFTlRfNDY3NDIiXQ"}
+{"timestamp": "2020-07-08 13:58:53.585984", "method": "GET", "path": "/v1/patients/WyJtb2NrMSIsInBhdCIsIlBBVElFTlRfNDY3NDIiXQ/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:58:53.586432", "method": "GET", "path": "/v1/patients/WyJtb2NrMSIsInBhdCIsIlBBVElFTlRfNDY3NDIiXQ/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:58:53.586705", "method": "GET", "path": "/v1/patients/WyJtb2NrMSIsInBhdCIsIlBBVElFTlRfNDY3NDIiXQ/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 13:58:53.593276", "action": "patient search failed", "exception": "When initializing mapper mapped class Biosample->biosample, expression 'individualId==Patient.patientId' failed to locate a name (\"name 'individualId' is not defined\"). If this is a class name, consider adding this relationship() to the <class 'clinphen_service.orm.models.Biosample'> class after both dependent classes have been defined.", "var_id": "WyJtb2NrMSIsInBhdCIsIlBBVElFTlRfNDY3NDIiXQ"}
+{"timestamp": "2020-07-08 14:00:04.176390", "method": "GET", "path": "/v1/patients/WyJtb2NrMSIsInBhdCIsIlBBVElFTlRfNDY3NDIiXQ/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 14:00:04.176690", "method": "GET", "path": "/v1/patients/WyJtb2NrMSIsInBhdCIsIlBBVElFTlRfNDY3NDIiXQ/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 14:00:04.176893", "method": "GET", "path": "/v1/patients/WyJtb2NrMSIsInBhdCIsIlBBVElFTlRfNDY3NDIiXQ/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 14:00:04.184028", "action": "patient search failed", "exception": "Could not locate any relevant foreign key columns for primary join condition 'biosample.\"individualId\" = patient.\"patientId\"' on relationship Biosample.patient.  Ensure that referencing columns are associated with a ForeignKey or ForeignKeyConstraint, or are annotated in the join condition with the foreign() annotation.", "var_id": "WyJtb2NrMSIsInBhdCIsIlBBVElFTlRfNDY3NDIiXQ"}
+{"timestamp": "2020-07-08 15:38:05.170776", "method": "GET", "path": "/v1/patients/WyJtb2NrMSIsInBhdCIsIlBBVElFTlRfNDY3NDIiXQ/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 15:38:05.171079", "method": "GET", "path": "/v1/patients/WyJtb2NrMSIsInBhdCIsIlBBVElFTlRfNDY3NDIiXQ/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 15:38:05.171280", "method": "GET", "path": "/v1/patients/WyJtb2NrMSIsInBhdCIsIlBBVElFTlRfNDY3NDIiXQ/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 15:38:05.178510", "action": "patient search failed", "exception": "Could not locate any relevant foreign key columns for primary join condition 'patient.\"patientId\" = biosample.\"individualId\"' on relationship Biosample.patient.  Ensure that referencing columns are associated with a ForeignKey or ForeignKeyConstraint, or are annotated in the join condition with the foreign() annotation.", "var_id": "WyJtb2NrMSIsInBhdCIsIlBBVElFTlRfNDY3NDIiXQ"}
+{"timestamp": "2020-07-08 15:40:43.147959", "method": "GET", "path": "/v1/patients/WyJtb2NrMSIsInBhdCIsIlBBVElFTlRfNDY3NDIiXQ/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 15:40:43.148258", "method": "GET", "path": "/v1/patients/WyJtb2NrMSIsInBhdCIsIlBBVElFTlRfNDY3NDIiXQ/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 15:40:43.148450", "method": "GET", "path": "/v1/patients/WyJtb2NrMSIsInBhdCIsIlBBVElFTlRfNDY3NDIiXQ/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 15:40:43.155871", "action": "patient search failed", "exception": "Could not locate any relevant foreign key columns for primary join condition 'patient.\"patientId\" = biosample.\"individualId\"' on relationship Biosample.patient.  Ensure that referencing columns are associated with a ForeignKey or ForeignKeyConstraint, or are annotated in the join condition with the foreign() annotation.", "var_id": "WyJtb2NrMSIsInBhdCIsIlBBVElFTlRfNDY3NDIiXQ"}
+{"timestamp": "2020-07-08 15:41:17.905157", "method": "GET", "path": "/v1/patients/WyJtb2NrMSIsInBhdCIsIlBBVElFTlRfNDY3NDIiXQ/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 15:41:17.905457", "method": "GET", "path": "/v1/patients/WyJtb2NrMSIsInBhdCIsIlBBVElFTlRfNDY3NDIiXQ/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 15:41:17.905661", "method": "GET", "path": "/v1/patients/WyJtb2NrMSIsInBhdCIsIlBBVElFTlRfNDY3NDIiXQ/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+Exception on /v1/patients/WyJtb2NrMSIsInBhdCIsIlBBVElFTlRfNDY3NDIiXQ/enrollments/ [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/decorator.py", line 48, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/uri_parsing.py", line 144, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/validation.py", line 384, in wrapper
+    return function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/parameter.py", line 121, in wrapper
+    return function(**kwargs)
+  File "<decorator-gen-12>", line 2, in get_enrollments_by_patient
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/logging.py", line 59, in apilog
+    return func(*args, **kwargs)
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/operations.py", line 239, in get_enrollments_by_patient
+    return get_related_items_by_patient_id(patient_id, orm_enrollment, api_enrollment, 'enrollment')
+  File "<decorator-gen-4>", line 2, in get_related_items_by_patient_id
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/logging.py", line 59, in apilog
+    return func(*args, **kwargs)
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/operations.py", line 191, in get_related_items_by_patient_id
+    authzed = q.filter(orm_class.dataset.has(name=dataset)).filter(orm_class.patient.has(id=patient_id)).all()
+AttributeError: type object 'Enrollment' has no attribute 'patient'
+{"timestamp": "2020-07-08 15:42:34.207779", "method": "GET", "path": "/v1/patients/WyJtb2NrMSIsInBhdCIsIlBBVElFTlRfNDY3NDIiXQ/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 15:42:34.208085", "method": "GET", "path": "/v1/patients/WyJtb2NrMSIsInBhdCIsIlBBVElFTlRfNDY3NDIiXQ/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 15:42:34.208287", "method": "GET", "path": "/v1/patients/WyJtb2NrMSIsInBhdCIsIlBBVElFTlRfNDY3NDIiXQ/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 15:42:41.300990", "method": "GET", "path": "/v1/patients/WyJtb2NrMSIsInBhdCIsIlBBVElFTlRfNDY3NDIiXQ?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 15:42:41.301286", "method": "GET", "path": "/v1/patients/WyJtb2NrMSIsInBhdCIsIlBBVElFTlRfNDY3NDIiXQ?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 15:42:53.264661", "method": "GET", "path": "/v1/patients/PATIENT_46742?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 15:42:53.264961", "method": "GET", "path": "/v1/patients/PATIENT_46742?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 15:43:03.140752", "method": "GET", "path": "/v1/patients/PATIENT_46742/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 15:43:03.141021", "method": "GET", "path": "/v1/patients/PATIENT_46742/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 15:43:03.141214", "method": "GET", "path": "/v1/patients/PATIENT_46742/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 15:43:22.006900", "method": "GET", "path": "/v1/patients/PATIENT_46742/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 15:43:22.007191", "method": "GET", "path": "/v1/patients/PATIENT_46742/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 15:45:36.938981", "method": "GET", "path": "/v1/patients/PATIENT_46742?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 15:45:36.939280", "method": "GET", "path": "/v1/patients/PATIENT_46742?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+Exception on /v1/patients/PATIENT_46742 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/decorator.py", line 48, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/uri_parsing.py", line 144, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/validation.py", line 384, in wrapper
+    return function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/parameter.py", line 121, in wrapper
+    return function(**kwargs)
+  File "<decorator-gen-11>", line 2, in get_one_patient
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/logging.py", line 59, in apilog
+    return func(*args, **kwargs)
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/operations.py", line 260, in get_one_patient
+    return get_patient_by_id(patient_id)
+  File "<decorator-gen-4>", line 2, in get_patient_by_id
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/logging.py", line 59, in apilog
+    return func(*args, **kwargs)
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/operations.py", line 174, in get_patient_by_id
+    fields = fake_authz(object_name)
+NameError: name 'object_name' is not defined
+{"timestamp": "2020-07-08 15:46:49.247379", "method": "GET", "path": "/v1/patients/PATIENT_46742?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 15:46:49.247732", "method": "GET", "path": "/v1/patients/PATIENT_46742?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+Exception on /v1/patients/PATIENT_46742 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/decorator.py", line 48, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/uri_parsing.py", line 144, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/validation.py", line 384, in wrapper
+    return function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/parameter.py", line 121, in wrapper
+    return function(**kwargs)
+  File "<decorator-gen-11>", line 2, in get_one_patient
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/logging.py", line 59, in apilog
+    return func(*args, **kwargs)
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/operations.py", line 260, in get_one_patient
+    return get_patient_by_id(patient_id)
+  File "<decorator-gen-4>", line 2, in get_patient_by_id
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/logging.py", line 59, in apilog
+    return func(*args, **kwargs)
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/operations.py", line 186, in get_patient_by_id
+    authzed = q.filter(orm_patient.dataset.has(name=dataset)).filter(patientId == patient_id).one_or_none()
+NameError: name 'patientId' is not defined
+{"timestamp": "2020-07-08 15:47:18.161644", "method": "GET", "path": "/v1/patients/PATIENT_46742?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 15:47:18.161957", "method": "GET", "path": "/v1/patients/PATIENT_46742?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+Exception on /v1/patients/PATIENT_46742 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/decorator.py", line 48, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/uri_parsing.py", line 144, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/validation.py", line 384, in wrapper
+    return function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/parameter.py", line 121, in wrapper
+    return function(**kwargs)
+  File "<decorator-gen-11>", line 2, in get_one_patient
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/logging.py", line 59, in apilog
+    return func(*args, **kwargs)
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/operations.py", line 260, in get_one_patient
+    return get_patient_by_id(patient_id)
+  File "<decorator-gen-4>", line 2, in get_patient_by_id
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/logging.py", line 59, in apilog
+    return func(*args, **kwargs)
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/operations.py", line 186, in get_patient_by_id
+    authzed = q.filter(orm_patient.dataset.has(name=dataset)).filter(patientId=patient_id).one_or_none()
+TypeError: filter() got an unexpected keyword argument 'patientId'
+{"timestamp": "2020-07-08 15:47:46.033602", "method": "GET", "path": "/v1/patients/PATIENT_46742?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 15:47:46.033940", "method": "GET", "path": "/v1/patients/PATIENT_46742?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+Exception on /v1/patients/PATIENT_46742 [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/decorator.py", line 48, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/uri_parsing.py", line 144, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/validation.py", line 384, in wrapper
+    return function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/parameter.py", line 121, in wrapper
+    return function(**kwargs)
+  File "<decorator-gen-11>", line 2, in get_one_patient
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/logging.py", line 59, in apilog
+    return func(*args, **kwargs)
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/operations.py", line 260, in get_one_patient
+    return get_patient_by_id(patient_id)
+  File "<decorator-gen-4>", line 2, in get_patient_by_id
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/logging.py", line 59, in apilog
+    return func(*args, **kwargs)
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/operations.py", line 197, in get_patient_by_id
+    return api_class(**results[0]), 200
+NameError: name 'api_class' is not defined
+{"timestamp": "2020-07-08 15:48:06.874250", "method": "GET", "path": "/v1/patients/PATIENT_46742?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 15:48:06.874548", "method": "GET", "path": "/v1/patients/PATIENT_46742?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 15:48:12.694922", "method": "GET", "path": "/v1/patients/PATIENT_46742/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 15:48:12.695188", "method": "GET", "path": "/v1/patients/PATIENT_46742/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-08 15:48:12.695386", "method": "GET", "path": "/v1/patients/PATIENT_46742/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}

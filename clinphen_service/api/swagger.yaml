@@ -1,0 +1,329 @@
+swagger: '2.0'
+info:
+  title: Biosamples and Calls API demo
+  version: "1"
+basePath: /v1
+consumes:
+  - application/json
+produces:
+  - application/json
+
+paths:
+  /patients/:
+    get:
+      operationId: clinphen_service.api.operations.get_patients
+      summary: Get all patients
+      responses:
+        "200":
+          description: Return patients
+          schema:
+            type: array
+            example: []
+            items:
+              $ref: '#/definitions/Patient'
+        "500":
+          description: Internal error
+          schema:
+            $ref: "#/definitions/Error"
+
+  /patients/{patient_id}:
+    get:
+      operationId: clinphen_service.api.operations.get_one_patient
+      summary: Get specific patient
+      parameters:
+        - $ref: '#/parameters/patient_id'
+      responses:
+        "200":
+          description: Return patient
+          schema:
+            $ref: '#/definitions/Patient'
+        "404":
+          description: Patient not found
+          schema:
+            $ref: "#/definitions/Error"
+        "500":
+          description: Internal error
+          schema:
+            $ref: "#/definitions/Error"
+
+  /biosamples/:
+    get:
+      operationId: clinphen_service.api.operations.get_biosamples
+      summary: Get all biosamples
+      responses:
+        "200":
+          description: Return biosamples
+          schema:
+            type: array
+            example: []
+            items:
+              $ref: '#/definitions/Biosample'
+        "403":
+          description: No authorization
+          schema:
+            $ref: "#/definitions/Error"
+
+  /biosamples/{biosample_id}:
+    get:
+      operationId: clinphen_service.api.operations.get_one_biosample
+      summary: Get specific biosample
+      parameters:
+        - $ref: '#/parameters/biosample_id'
+      responses:
+        "200":
+          description: Return biosample
+          schema:
+            $ref: '#/definitions/Biosample'
+        "404":
+          description: Biosample not found
+        "500":
+          description: Internal error
+          schema:
+            $ref: "#/definitions/Error"
+
+  /enrollments/:
+    get:
+      operationId: clinphen_service.api.operations.get_enrollments
+      summary: Get all enrollments
+      responses:
+        "200":
+          description: Return enrollments
+          schema:
+            type: array
+            example: []
+            items:
+              $ref: '#/definitions/Enrollment'
+        "403":
+          description: No authorization
+          schema:
+            $ref: "#/definitions/Error"
+
+  /enrollments/{enrollment_id}:
+    get:
+      operationId: clinphen_service.api.operations.get_one_enrollment
+      summary: Get specific enrollment
+      parameters:
+        - $ref: '#/parameters/enrollment_id'
+      responses:
+        "200":
+          description: Return enrollment
+          schema:
+            $ref: '#/definitions/Enrollment'
+        "404":
+          description: Enrollment not found
+        "500":
+          description: Internal error
+          schema:
+            $ref: "#/definitions/Error"
+
+  /patients/{patient_id}/biosamples/:
+    get:
+      operationId: clinphen_service.api.operations.get_biosamples_by_patient
+      summary: Get biosamples for a patient
+      parameters:
+        - $ref: '#/parameters/patient_id'
+      responses:
+        "200":
+          description: Return biosamples
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Biosample'
+        "404":
+          description: Patient does not exist
+          schema:
+            $ref: '#/definitions/Error'
+
+  /patients/{patient_id}/enrollments/:
+    get:
+      operationId: clinphen_service.api.operations.get_enrollments_by_patient
+      summary: Get enrollments for a patient
+      parameters:
+        - $ref: '#/parameters/patient_id'
+      responses:
+        "200":
+          description: Return enrollments
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Enrollment'
+        "404":
+          description: Patient does not exist
+          schema:
+            $ref: '#/definitions/Error'
+
+  /biosamples/{biosample_id}/patients/:
+    get:
+      operationId: clinphen_service.api.operations.get_patients_by_biosample
+      summary: Get patients for a given biosample
+      parameters:
+        - $ref: '#/parameters/biosample_id'
+      responses:
+        "200":
+          description: Return patients
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Patient'
+            example: []
+        "404":
+          description: Biosample does not exist
+          schema:
+            $ref: '#/definitions/Error'
+
+parameters:
+  biosample_id:
+    name: biosample_id
+    description: Biosample unique identifier
+    in: path
+    type: string
+    required: true
+
+  patient_id:
+    name: patient_id
+    description: Patient unique identifier
+    in: path
+    type: string
+    required: true
+
+  enrollment_id:
+    name: enrollment_id
+    description: Enrollment unique identifier
+    in: path
+    type: string
+    required: true
+
+definitions:
+  Patient:
+    type: object
+    properties:
+      id:
+        type: string
+        readOnly: true
+      patientId:
+        type: string
+      attributes:
+        type: string
+      datasetId:
+        type: string
+      created:
+        type: string
+        format: date-time
+        description: Creation time
+        example: "2015-07-07T15:49:51.230+02:00"
+        readOnly: true
+      updated:
+        type: string
+        format: date-time
+        description: Last update time
+        example: "2015-07-07T15:49:51.230+02:00"
+        readOnly: true
+      name:
+        type: string
+      description:
+        type: string
+      dateOfBirth:
+        type: string
+      gender:
+        type: string
+      ethnicity:
+        type: string
+      race:
+        type: string
+      provinceOfResidence:
+        type: string
+
+  Biosample:
+    type: object
+    required:
+      - name
+      - id
+    properties:
+      id:
+        type: string
+        readOnly: true
+      attributes:
+        type: string
+      created:
+        type: string
+        format: date-time
+        description: Creation time
+        example: "2015-07-07T15:49:51.230+02:00"
+        readOnly: true
+      updated:
+        type: string
+        format: date-time
+        description: Last update time
+        example: "2015-07-07T15:49:51.230+02:00"
+        readOnly: true
+      description:
+        type: string
+      disease:
+        type: string
+      name:
+        type: string
+      individualAgeAtCollection:
+        type: string
+      datasetId:
+        type: string
+
+  Enrollment:
+    type: object
+    required:
+      - name
+      - id
+    properties:
+      id:
+        type: string
+      attributes:
+        type: string
+      datasetId:
+        type: string
+      created:
+        type: string
+        format: date-time
+        description: Creation time
+        example: "2015-07-07T15:49:51.230+02:00"
+        readOnly: true
+      updated:
+        type: string
+        format: date-time
+        description: Last update time
+        example: "2015-07-07T15:49:51.230+02:00"
+        readOnly: true
+      name:
+        type: string
+      description:
+        type: string
+      patientId:
+        type: string
+      enrollmentApprovalDate:
+        type: string
+      ageAtEnrollment:
+        type: string
+      eligibilityCategory:
+        type: string
+      primaryOncologistName:
+        type: string
+      referringPhysicianName:
+        type: string
+      referringPhysicianContact:
+        type: string
+      summaryOfIdRequest:
+        type: string
+      treatingCentreName:
+        type: string
+      treatingCentreProvince:
+        type: string
+
+  Error:
+    type: object
+    required:
+      - message
+      - code
+    properties:
+      code:
+        type: integer
+        format: int32
+      message:
+        type: string
