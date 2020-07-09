@@ -4,7 +4,6 @@
 Implement endpoints of model service
 """
 from flask import request
-from flask_filter import FlaskFilter
 from flask_filter.schemas import FilterSchema
 from clinphen_service import orm
 from clinphen_service.orm import models
