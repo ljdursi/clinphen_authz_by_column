@@ -665,3 +665,487 @@ NameError: name 'api_class' is not defined
 {"timestamp": "2020-07-08 15:48:12.694922", "method": "GET", "path": "/v1/patients/PATIENT_46742/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
 {"timestamp": "2020-07-08 15:48:12.695188", "method": "GET", "path": "/v1/patients/PATIENT_46742/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
 {"timestamp": "2020-07-08 15:48:12.695386", "method": "GET", "path": "/v1/patients/PATIENT_46742/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-09 14:50:09.429624", "method": "GET", "path": "/v1/patients/PATIENT_46742/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-09 14:50:09.430334", "method": "GET", "path": "/v1/patients/PATIENT_46742/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-09 14:50:09.430560", "method": "GET", "path": "/v1/patients/PATIENT_46742/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+Exception on /v1/patients/PATIENT_46742/enrollments/ [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/decorator.py", line 48, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/uri_parsing.py", line 173, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/validation.py", line 388, in wrapper
+    return function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/parameter.py", line 126, in wrapper
+    return function(**kwargs)
+  File "</usr/local/lib/python3.7/site-packages/decorator.py:decorator-gen-16>", line 2, in get_enrollments_by_patient
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/logging.py", line 59, in apilog
+    return func(*args, **kwargs)
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/operations.py", line 296, in get_enrollments_by_patient
+    return get_related_items_by_patient_id(patient_id, orm_enrollment, api_enrollment, 'enrollment')
+  File "</usr/local/lib/python3.7/site-packages/decorator.py:decorator-gen-5>", line 2, in get_related_items_by_patient_id
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/logging.py", line 59, in apilog
+    return func(*args, **kwargs)
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/operations.py", line 228, in get_related_items_by_patient_id
+    patient_or_error, code = get_patient_by_id(patient_id)
+  File "</usr/local/lib/python3.7/site-packages/decorator.py:decorator-gen-4>", line 2, in get_patient_by_id
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/logging.py", line 59, in apilog
+    return func(*args, **kwargs)
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/operations.py", line 213, in get_patient_by_id
+    return api_patient(**results[0]), 200
+TypeError: __init__() got an unexpected keyword argument 'attributes'
+{"timestamp": "2020-07-09 15:10:12.127176", "method": "GET", "path": "/v1/patients/PATIENT_46742/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-09 15:10:12.127503", "method": "GET", "path": "/v1/patients/PATIENT_46742/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-09 15:10:12.127759", "method": "GET", "path": "/v1/patients/PATIENT_46742/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+Exception on /v1/patients/PATIENT_46742/enrollments/ [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/decorator.py", line 48, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/uri_parsing.py", line 173, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/validation.py", line 388, in wrapper
+    return function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/parameter.py", line 126, in wrapper
+    return function(**kwargs)
+  File "</usr/local/lib/python3.7/site-packages/decorator.py:decorator-gen-16>", line 2, in get_enrollments_by_patient
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/logging.py", line 59, in apilog
+    return func(*args, **kwargs)
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/operations.py", line 296, in get_enrollments_by_patient
+    return get_related_items_by_patient_id(patient_id, orm_enrollment, api_enrollment, 'enrollment')
+  File "</usr/local/lib/python3.7/site-packages/decorator.py:decorator-gen-5>", line 2, in get_related_items_by_patient_id
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/logging.py", line 59, in apilog
+    return func(*args, **kwargs)
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/operations.py", line 228, in get_related_items_by_patient_id
+    patient_or_error, code = get_patient_by_id(patient_id)
+  File "</usr/local/lib/python3.7/site-packages/decorator.py:decorator-gen-4>", line 2, in get_patient_by_id
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/logging.py", line 59, in apilog
+    return func(*args, **kwargs)
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/operations.py", line 213, in get_patient_by_id
+    return api_patient().dump(results[0]), 200
+  File "/usr/local/lib/python3.7/site-packages/marshmallow/schema.py", line 557, in dump
+    result = self._serialize(processed_obj, many=many)
+  File "/usr/local/lib/python3.7/site-packages/marshmallow/schema.py", line 521, in _serialize
+    value = field_obj.serialize(attr_name, obj, accessor=self.get_attribute)
+  File "/usr/local/lib/python3.7/site-packages/marshmallow/fields.py", line 312, in serialize
+    return self._serialize(value, attr, obj, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/marshmallow/fields.py", line 1197, in _serialize
+    return format_func(value)
+  File "/usr/local/lib/python3.7/site-packages/marshmallow/utils.py", line 192, in isoformat
+    return datetime.isoformat()
+AttributeError: 'str' object has no attribute 'isoformat'
+{"timestamp": "2020-07-09 15:11:32.358949", "method": "GET", "path": "/v1/patients/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-09 15:11:32.359363", "method": "GET", "path": "/v1/patients/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+Exception on /v1/patients/ [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/decorator.py", line 48, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/uri_parsing.py", line 173, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/parameter.py", line 126, in wrapper
+    return function(**kwargs)
+  File "</usr/local/lib/python3.7/site-packages/decorator.py:decorator-gen-12>", line 2, in get_patients
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/logging.py", line 59, in apilog
+    return func(*args, **kwargs)
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/operations.py", line 278, in get_patients
+    return list_items(orm_patient, api_patient, 'patient')
+  File "</usr/local/lib/python3.7/site-packages/decorator.py:decorator-gen-2>", line 2, in list_items
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/logging.py", line 59, in apilog
+    return func(*args, **kwargs)
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/operations.py", line 144, in list_items
+    filters = FilterSchema().load(filters_json, many=True)
+  File "/usr/local/lib/python3.7/site-packages/marshmallow/schema.py", line 724, in load
+    data, many=many, partial=partial, unknown=unknown, postprocess=True
+  File "/usr/local/lib/python3.7/site-packages/marshmallow/schema.py", line 905, in _do_load
+    raise exc
+marshmallow.exceptions.ValidationError: {'_schema': ['Invalid input type.']}
+{"timestamp": "2020-07-09 15:14:02.014929", "method": "GET", "path": "/v1/patients/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-09 15:14:02.015219", "method": "GET", "path": "/v1/patients/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+Exception on /v1/patients/ [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/decorator.py", line 48, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/uri_parsing.py", line 173, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/parameter.py", line 126, in wrapper
+    return function(**kwargs)
+  File "</usr/local/lib/python3.7/site-packages/decorator.py:decorator-gen-12>", line 2, in get_patients
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/logging.py", line 59, in apilog
+    return func(*args, **kwargs)
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/operations.py", line 278, in get_patients
+    return list_items(orm_patient, api_patient, 'patient')
+  File "</usr/local/lib/python3.7/site-packages/decorator.py:decorator-gen-2>", line 2, in list_items
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/logging.py", line 59, in apilog
+    return func(*args, **kwargs)
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/operations.py", line 144, in list_items
+    filters = FilterSchema().load(filters_json, many=True)
+  File "/usr/local/lib/python3.7/site-packages/marshmallow/schema.py", line 724, in load
+    data, many=many, partial=partial, unknown=unknown, postprocess=True
+  File "/usr/local/lib/python3.7/site-packages/marshmallow/schema.py", line 905, in _do_load
+    raise exc
+marshmallow.exceptions.ValidationError: {'_schema': ['Invalid input type.']}
+{"timestamp": "2020-07-09 15:14:06.853155", "method": "GET", "path": "/v1/patients/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-09 15:14:06.853442", "method": "GET", "path": "/v1/patients/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+Exception on /v1/patients/ [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/decorator.py", line 48, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/uri_parsing.py", line 173, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/parameter.py", line 126, in wrapper
+    return function(**kwargs)
+  File "</usr/local/lib/python3.7/site-packages/decorator.py:decorator-gen-12>", line 2, in get_patients
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/logging.py", line 59, in apilog
+    return func(*args, **kwargs)
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/operations.py", line 278, in get_patients
+    return list_items(orm_patient, api_patient, 'patient')
+  File "</usr/local/lib/python3.7/site-packages/decorator.py:decorator-gen-2>", line 2, in list_items
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/logging.py", line 59, in apilog
+    return func(*args, **kwargs)
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/operations.py", line 144, in list_items
+    filters = FilterSchema().load(filters_json, many=True)
+  File "/usr/local/lib/python3.7/site-packages/marshmallow/schema.py", line 724, in load
+    data, many=many, partial=partial, unknown=unknown, postprocess=True
+  File "/usr/local/lib/python3.7/site-packages/marshmallow/schema.py", line 905, in _do_load
+    raise exc
+marshmallow.exceptions.ValidationError: {'_schema': ['Invalid input type.']}
+{"timestamp": "2020-07-09 15:14:48.454925", "method": "GET", "path": "/v1/patients/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-09 15:14:48.455501", "method": "GET", "path": "/v1/patients/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-09 15:15:11.257283", "method": "GET", "path": "/v1/patients/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-09 15:15:11.257592", "method": "GET", "path": "/v1/patients/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-09 15:16:24.864586", "method": "GET", "path": "/v1/patients/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-09 15:16:24.864953", "method": "GET", "path": "/v1/patients/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+Exception on /v1/patients/ [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/decorator.py", line 48, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/uri_parsing.py", line 173, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/parameter.py", line 126, in wrapper
+    return function(**kwargs)
+  File "</usr/local/lib/python3.7/site-packages/decorator.py:decorator-gen-12>", line 2, in get_patients
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/logging.py", line 59, in apilog
+    return func(*args, **kwargs)
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/operations.py", line 279, in get_patients
+    return list_items(orm_patient, api_patient, 'patient')
+  File "</usr/local/lib/python3.7/site-packages/decorator.py:decorator-gen-2>", line 2, in list_items
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/logging.py", line 59, in apilog
+    return func(*args, **kwargs)
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/operations.py", line 148, in list_items
+    results = results + [api_class().dump(orm.dump(p, fields=columns)) for p in q.all()]
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/operations.py", line 148, in <listcomp>
+    results = results + [api_class().dump(orm.dump(p, fields=columns)) for p in q.all()]
+  File "/usr/local/lib/python3.7/site-packages/marshmallow/schema.py", line 557, in dump
+    result = self._serialize(processed_obj, many=many)
+  File "/usr/local/lib/python3.7/site-packages/marshmallow/schema.py", line 521, in _serialize
+    value = field_obj.serialize(attr_name, obj, accessor=self.get_attribute)
+  File "/usr/local/lib/python3.7/site-packages/marshmallow/fields.py", line 312, in serialize
+    return self._serialize(value, attr, obj, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/marshmallow/fields.py", line 1197, in _serialize
+    return format_func(value)
+  File "/usr/local/lib/python3.7/site-packages/marshmallow/utils.py", line 192, in isoformat
+    return datetime.isoformat()
+AttributeError: 'str' object has no attribute 'isoformat'
+{"timestamp": "2020-07-09 15:18:11.316989", "method": "GET", "path": "/v1/patients/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-09 15:18:11.317265", "method": "GET", "path": "/v1/patients/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-09 15:18:16.478436", "method": "GET", "path": "/v1/patients/PATIENT_46742/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-09 15:18:16.478762", "method": "GET", "path": "/v1/patients/PATIENT_46742/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-09 15:18:16.478985", "method": "GET", "path": "/v1/patients/PATIENT_46742/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-09 15:23:18.060799", "method": "POST", "path": "/v1/patients/?", "data": "b'[{\"field\": \"name\", \"operation\": \"=\", \"value\": \"PATIENT_46742_2006-01-29\"}]'", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\nContent-Type: application/json\r\nContent-Length: 74\r\n\r\n"}
+Exception on /v1/patients/ [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/decorator.py", line 48, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/uri_parsing.py", line 173, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/validation.py", line 194, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/validation.py", line 388, in wrapper
+    return function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/parameter.py", line 126, in wrapper
+    return function(**kwargs)
+  File "</usr/local/lib/python3.7/site-packages/decorator.py:decorator-gen-13>", line 2, in get_patients_filtered
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/logging.py", line 59, in apilog
+    return func(*args, **kwargs)
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/operations.py", line 283, in get_patients_filtered
+    filters = request.json.get("filters")
+AttributeError: 'list' object has no attribute 'get'
+{"timestamp": "2020-07-09 15:33:04.274081", "method": "POST", "path": "/v1/patients/?", "data": "b'[{\"field\": \"name\", \"operation\": \"=\", \"value\": \"PATIENT_46742_2006-01-29\"}]'", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\nContent-Type: application/json\r\nContent-Length: 74\r\n\r\n"}
+Exception on /v1/patients/ [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/decorator.py", line 48, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/uri_parsing.py", line 173, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/validation.py", line 194, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/validation.py", line 388, in wrapper
+    return function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/parameter.py", line 126, in wrapper
+    return function(**kwargs)
+  File "</usr/local/lib/python3.7/site-packages/decorator.py:decorator-gen-13>", line 2, in get_patients_filtered
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/logging.py", line 59, in apilog
+    return func(*args, **kwargs)
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/operations.py", line 283, in get_patients_filtered
+    filters = request.json.get("filters")
+AttributeError: 'list' object has no attribute 'get'
+{"timestamp": "2020-07-09 15:33:52.933296", "method": "POST", "path": "/v1/patients/?", "data": "b'[{\"field\": \"name\", \"operation\": \"=\", \"value\": \"PATIENT_46742_2006-01-29\"}]'", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\nContent-Type: application/json\r\nContent-Length: 74\r\n\r\n"}
+Exception on /v1/patients/ [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/decorator.py", line 48, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/uri_parsing.py", line 173, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/validation.py", line 194, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/validation.py", line 388, in wrapper
+    return function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/parameter.py", line 126, in wrapper
+    return function(**kwargs)
+  File "</usr/local/lib/python3.7/site-packages/decorator.py:decorator-gen-13>", line 2, in get_patients_filtered
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/logging.py", line 59, in apilog
+    return func(*args, **kwargs)
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/operations.py", line 283, in get_patients_filtered
+    filters = request.json_get()
+  File "/usr/local/lib/python3.7/site-packages/werkzeug/local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'Request' object has no attribute 'json_get'
+{"timestamp": "2020-07-09 15:34:10.721819", "method": "POST", "path": "/v1/patients/?", "data": "b'[{\"field\": \"name\", \"operation\": \"=\", \"value\": \"PATIENT_46742_2006-01-29\"}]'", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\nContent-Type: application/json\r\nContent-Length: 74\r\n\r\n"}
+{"timestamp": "2020-07-09 15:34:10.722121", "method": "POST", "path": "/v1/patients/?", "data": "b'[{\"field\": \"name\", \"operation\": \"=\", \"value\": \"PATIENT_46742_2006-01-29\"}]'", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\nContent-Type: application/json\r\nContent-Length: 74\r\n\r\n"}
+Exception on /v1/patients/ [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/decorator.py", line 48, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/uri_parsing.py", line 173, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/validation.py", line 194, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/validation.py", line 388, in wrapper
+    return function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/parameter.py", line 126, in wrapper
+    return function(**kwargs)
+  File "</usr/local/lib/python3.7/site-packages/decorator.py:decorator-gen-13>", line 2, in get_patients_filtered
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/logging.py", line 59, in apilog
+    return func(*args, **kwargs)
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/operations.py", line 284, in get_patients_filtered
+    return list_items(orm_patient, api_patient, 'patient', filters_json=filters)
+  File "</usr/local/lib/python3.7/site-packages/decorator.py:decorator-gen-2>", line 2, in list_items
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/logging.py", line 59, in apilog
+    return func(*args, **kwargs)
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/operations.py", line 143, in list_items
+    if _filters_allowed(filters_json, columns):
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/operations.py", line 120, in _filters_allowed
+    allfilterfields = set([f.field for f in filters])
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/operations.py", line 120, in <listcomp>
+    allfilterfields = set([f.field for f in filters])
+AttributeError: 'dict' object has no attribute 'field'
+{"timestamp": "2020-07-09 15:35:53.755706", "method": "POST", "path": "/v1/patients/?", "data": "b'[{\"field\": \"name\", \"operation\": \"=\", \"value\": \"PATIENT_46742_2006-01-29\"}]'", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\nContent-Type: application/json\r\nContent-Length: 74\r\n\r\n"}
+{"timestamp": "2020-07-09 15:35:53.756054", "method": "POST", "path": "/v1/patients/?", "data": "b'[{\"field\": \"name\", \"operation\": \"=\", \"value\": \"PATIENT_46742_2006-01-29\"}]'", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\nContent-Type: application/json\r\nContent-Length: 74\r\n\r\n"}
+Exception on /v1/patients/ [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/decorator.py", line 48, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/uri_parsing.py", line 173, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/validation.py", line 194, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/validation.py", line 388, in wrapper
+    return function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/parameter.py", line 126, in wrapper
+    return function(**kwargs)
+  File "</usr/local/lib/python3.7/site-packages/decorator.py:decorator-gen-13>", line 2, in get_patients_filtered
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/logging.py", line 59, in apilog
+    return func(*args, **kwargs)
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/operations.py", line 284, in get_patients_filtered
+    return list_items(orm_patient, api_patient, 'patient', filters_json=filters)
+  File "</usr/local/lib/python3.7/site-packages/decorator.py:decorator-gen-2>", line 2, in list_items
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/logging.py", line 59, in apilog
+    return func(*args, **kwargs)
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/operations.py", line 145, in list_items
+    filters = FilterSchema().load(filters_json, many=True)
+  File "/usr/local/lib/python3.7/site-packages/marshmallow/schema.py", line 724, in load
+    data, many=many, partial=partial, unknown=unknown, postprocess=True
+  File "/usr/local/lib/python3.7/site-packages/marshmallow/schema.py", line 905, in _do_load
+    raise exc
+marshmallow.exceptions.ValidationError: {0: {'op': ['Missing data for required field.'], 'operation': ['Unknown field.']}}
+{"timestamp": "2020-07-09 15:40:38.579793", "method": "POST", "path": "/v1/patients/?", "data": "b'[{\"field\": \"name\", \"op\": \"=\", \"operation\": \"foo\", \"value\": \"PATIENT_46742_2006-01-29\"}]'", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\nContent-Type: application/json\r\nContent-Length: 87\r\n\r\n"}
+{"timestamp": "2020-07-09 15:40:38.580596", "method": "POST", "path": "/v1/patients/?", "data": "b'[{\"field\": \"name\", \"op\": \"=\", \"operation\": \"foo\", \"value\": \"PATIENT_46742_2006-01-29\"}]'", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\nContent-Type: application/json\r\nContent-Length: 87\r\n\r\n"}
+Exception on /v1/patients/ [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/decorator.py", line 48, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/uri_parsing.py", line 173, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/validation.py", line 194, in wrapper
+    response = function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/validation.py", line 388, in wrapper
+    return function(request)
+  File "/usr/local/lib/python3.7/site-packages/connexion/decorators/parameter.py", line 126, in wrapper
+    return function(**kwargs)
+  File "</usr/local/lib/python3.7/site-packages/decorator.py:decorator-gen-13>", line 2, in get_patients_filtered
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/logging.py", line 59, in apilog
+    return func(*args, **kwargs)
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/operations.py", line 284, in get_patients_filtered
+    return list_items(orm_patient, api_patient, 'patient', filters_json=filters)
+  File "</usr/local/lib/python3.7/site-packages/decorator.py:decorator-gen-2>", line 2, in list_items
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/logging.py", line 59, in apilog
+    return func(*args, **kwargs)
+  File "/Users/ljdursi/Desktop/clinphen/clinphen_service/api/operations.py", line 145, in list_items
+    filters = FilterSchema().load(filters_json, many=True)
+  File "/usr/local/lib/python3.7/site-packages/marshmallow/schema.py", line 724, in load
+    data, many=many, partial=partial, unknown=unknown, postprocess=True
+  File "/usr/local/lib/python3.7/site-packages/marshmallow/schema.py", line 905, in _do_load
+    raise exc
+marshmallow.exceptions.ValidationError: {0: {'operation': ['Unknown field.']}}
+{"timestamp": "2020-07-09 15:41:07.593365", "method": "POST", "path": "/v1/patients/?", "data": "b'[{\"field\": \"name\", \"op\": \"=\", \"value\": \"PATIENT_46742_2006-01-29\"}]'", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\nContent-Type: application/json\r\nContent-Length: 67\r\n\r\n"}
+{"timestamp": "2020-07-09 15:41:07.593694", "method": "POST", "path": "/v1/patients/?", "data": "b'[{\"field\": \"name\", \"op\": \"=\", \"value\": \"PATIENT_46742_2006-01-29\"}]'", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\nContent-Type: application/json\r\nContent-Length: 67\r\n\r\n"}
+{"timestamp": "2020-07-09 15:41:21.122817", "method": "GET", "path": "/v1/patients/PATIENT_46742/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-09 15:41:21.123071", "method": "GET", "path": "/v1/patients/PATIENT_46742/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-09 15:41:21.123257", "method": "GET", "path": "/v1/patients/PATIENT_46742/enrollments/?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-09 15:41:43.154327", "method": "GET", "path": "/v1/patients/PATIENT_46742?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-09 15:41:43.154588", "method": "GET", "path": "/v1/patients/PATIENT_46742?", "data": "b''", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\n\r\n"}
+{"timestamp": "2020-07-09 15:41:54.700123", "method": "POST", "path": "/v1/patients/?", "data": "b'[{\"field\": \"name\", \"op\": \"=\", \"value\": \"PATIENT_46742\"}]'", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\nContent-Type: application/json\r\nContent-Length: 56\r\n\r\n"}
+{"timestamp": "2020-07-09 15:41:54.700407", "method": "POST", "path": "/v1/patients/?", "data": "b'[{\"field\": \"name\", \"op\": \"=\", \"value\": \"PATIENT_46742\"}]'", "address": "127.0.0.1", "headers": "Host: localhost:3000\r\nUser-Agent: curl/7.64.1\r\nAccept: */*\r\nContent-Type: application/json\r\nContent-Length: 56\r\n\r\n"}

@@ -3,6 +3,9 @@
 """
 Implement endpoints of model service
 """
+from flask import request
+from flask_filter import FlaskFilter
+from flask_filter.schemas import FilterSchema
 from clinphen_service import orm
 from clinphen_service.orm import models
 from clinphen_service.api.logging import apilog, logger
@@ -77,7 +80,7 @@ def _report_search_failed(typename, exception, **kwargs):
     report = typename + ' search failed'
     message = 'Internal error searching for '+typename+'s'
     logger().error(struct_log(action=report, exception=str(exception), **kwargs))
-    return Error(message=message, code=500)
+    return Error().dump({"message": message, "code": 500})
 
 
 def _report_conversion_error(typename, exception, **kwargs):
@@ -93,7 +96,7 @@ def _report_conversion_error(typename, exception, **kwargs):
     report = 'Could not convert '+typename+' to ORM model'
     message = typename + ': failed validation - could not convert to internal representation'
     logger().error(struct_log(action=report, exception=str(exception), **kwargs))
-    return Error(message=message, code=400)
+    return Error().dump({"message": message, "code": 400})
 
 
 def _report_unauthorized_error(typename, **kwargs):
@@ -108,11 +111,21 @@ def _report_unauthorized_error(typename, **kwargs):
     report = 'No authorization to access '+typename+' objects'
     message = typename + ': failed authorization - could not access.'
     logger().error(struct_log(action=report, **kwargs))
-    return Error(message=message, code=405)
+    return Error().dump({"message": message, "code": 405})
 
+def _filters_allowed(filters, fields):
+    if not filters:
+        return True
+
+    allfilterfields = set([f["field"] for f in filters])
+    disallowed = allfilterfields - set(fields)
+    if disallowed:
+        return False
+
+    return True
 
 @apilog
-def list_items(orm_class, api_class, object_name):
+def list_items(orm_class, api_class, object_name, filters_json=None):
     """
     Return all authorized item
     """
@@ -126,8 +139,13 @@ def list_items(orm_class, api_class, object_name):
     results = []
     try:
         for dataset, columns in fields.items():
-            q = db_session.query(orm_class).filter(orm_class.dataset.has(name=dataset)).all()
-            results = results + [api_class(**orm.dump(p, fields=columns)) for p in q]
+            q = db_session.query(orm_class).filter(orm_class.dataset.has(name=dataset))
+            if _filters_allowed(filters_json, columns):
+                if filters_json:
+                    filters = FilterSchema().load(filters_json, many=True)
+                    for f in filters:
+                        q = f.apply(q, orm_class, api_class)
+                results = results + [api_class().dump(orm.dump(p, fields=columns)) for p in q.all()]
     except orm.ORMException as e:
         err = _report_search_failed(object_name, exception=e)
         return err, 500
@@ -160,10 +178,9 @@ def get_item_by_id(item_id, orm_class, api_class, object_name):
         return err, 500
 
     if not results:
-        err = Error(message=f"No {object_name} found: {item_id}", code=404)
-        return err, 404
+        return Error().dump({"message":f"No {object_name} found: {item_id}", "code":404}), 404
 
-    return api_class(**results[0]), 200
+    return api_class().dump(results[0]), 200
 
 @apilog
 def get_patient_by_id(patient_id):
@@ -191,10 +208,10 @@ def get_patient_by_id(patient_id):
         return err, 500
 
     if not results:
-        err = Error(message=f"No patient found: {patient_id}", code=404)
+        err = Error().dump({"message":f"No patient found: {patient_id}", "code":404})
         return err, 404
 
-    return api_patient(**results[0]), 200
+    return api_patient().dump(results[0]), 200
 
 
 @apilog
@@ -221,7 +238,7 @@ def get_related_items_by_patient_id(patient_id, orm_class, api_class, object_nam
         for dataset in authzed_datasets:
             authzed = q.filter(orm_class.dataset.has(name=dataset)).filter(orm_class.patientId==patient_id).all()
             if authzed:
-                results = results + [api_class(**orm.dump(item, fields=fields[dataset])) for item in authzed]
+                results = results + [api_class().dump(orm.dump(item, fields=fields[dataset])) for item in authzed]
     except orm.ORMException as e:
         err = _report_search_failed(object_name, e, patient_id=str(patient_id))
         return err, 500
@@ -234,16 +251,23 @@ def get_related_items_by_patient_id(patient_id, orm_class, api_class, object_nam
 def get_biosamples():
     return list_items(orm_biosample, api_biosample, 'biosample')
 
+@apilog
+def get_biosamples_filtered():
+    filters = request.get_json()
+    return list_items(orm_biosample, api_biosample, 'biosample', filters_json=filters)
 
 @apilog
 def get_one_biosample(biosample_id):
     return get_item_by_id(biosample_id, orm_biosample, api_biosample, 'biosample')
 
-
 @apilog
 def get_enrollments():
     return list_items(orm_enrollment, api_enrollment, 'enrollment')
 
+@apilog
+def get_enrollments_filtered():
+    filters = request.get_json()
+    return list_items(orm_enrollment, api_enrollment, 'enrollment', filters_json=filters)
 
 @apilog
 def get_one_enrollment(enrollment_id):
@@ -254,6 +278,10 @@ def get_one_enrollment(enrollment_id):
 def get_patients():
     return list_items(orm_patient, api_patient, 'patient')
 
+@apilog
+def get_patients_filtered():
+    filters = request.get_json()
+    return list_items(orm_patient, api_patient, 'patient', filters_json=filters)
 
 @apilog
 def get_one_patient(patient_id):
@@ -264,69 +292,6 @@ def get_one_patient(patient_id):
 def get_biosamples_by_patient(patient_id):
     return get_related_items_by_patient_id(patient_id, orm_biosample, api_biosample, 'biosample')
 
-
 @apilog
 def get_enrollments_by_patient(patient_id):
     return get_related_items_by_patient_id(patient_id, orm_enrollment, api_enrollment, 'enrollment')
-
-
-# def biosample_exists(id=None, chromosome=None,  # pylint:disable=redefined-builtin
-#                    start=None, alt=None, ref=None, **_kwargs):
-#     """
-#     Check to see if biosample exists, by ID if given or if by features if not
-#     """
-#     if id is not None:
-#         if Biosample().query.get(id).count() > 0:
-#             return True
-#     if Biosample().query.filter(models.Biosample.chromosome == chromosome)\
-#         .filter(and_(models.Biosample.start == start,
-#                      models.Biosample.alt == alt,
-#                      models.Biosample.ref == ref)).count() > 0:
-#         return True
-
-#     return False
-
-
-# def patient_exists(db_session, id=None, description=None, **_kwargs):  # pylint:disable=redefined-builtin
-#     """
-#     Check to see if patient exists, by ID if given or if by features if not
-#     """
-#     if id is not None:
-#         return db_session.query(models.Patient)\
-#                           .filter(models.Patient.id == id).count() > 0
-
-#     if description is not None:
-#         return db_session.query(models.Patient)\
-#                           .filter(models.Patient.description == description).count() > 0
-
-#     return False
-
-
-@apilog
-def get_patients_by_biosample(biosample_id):
-    pass
-#     """
-#     Return biosamples that have been called in an patient
-#     """
-#     db_session = orm.get_session()
-
-#     try:
-#         var = db_session.query(orm.models.Biosample)\
-#             .filter(orm.models.Biosample.id == biosample_id)\
-#             .one_or_none()
-#     except orm.ORMException as e:
-#         err = _report_search_failed('biosample', e, biosample_id=biosample_id)
-#         return err, 500
-
-#     if not var:
-#         err = Error(message="No biosample found: "+str(biosample_id), code=404)
-#         return err, 404
-
-#     try:
-#         patients = [call.patient for call in var.calls
-#                        if call.patient is not None]
-#     except orm.ORMException as e:
-#         err = _report_search_failed('patients', e, by_biosample_id=biosample_id)
-#         return err, 500
-
-#     return [orm.dump(i) for i in patients], 200

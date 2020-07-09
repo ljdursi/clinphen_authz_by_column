@@ -25,7 +25,7 @@ def main(args=None):
     args = parser.parse_args(args)
 
     # set up the application
-    app = connexion.FlaskApp(__name__, server='tornado')
+    app = connexion.FlaskApp(__name__)
     define("dbfile", default=args.database)
     clinphen_service.orm.init_db()
     db_session = clinphen_service.orm.get_session()

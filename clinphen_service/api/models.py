@@ -3,32 +3,54 @@ API Data Model definitions
 From Swagger file, with python classes via Bravado
 """
 
-import pkg_resources
-import yaml
-from bravado_core.spec import Spec
+from marshmallow import Schema, fields
 
-#
-# Read in the API definition, and parse it with Bravado
-#
-_API_DEF = pkg_resources.resource_filename('clinphen_service',
-                                           'api/swagger.yaml')
-_SPEC_DICT = yaml.safe_load(open(_API_DEF, 'r'))
+class Patient(Schema):
+    id = fields.String()
+    patientId = fields.String()
+    attributes = fields.String()
+    datasetId = fields.String()
+    created = fields.String()
+    updated = fields.String()
+    name = fields.String()
+    description = fields.String()
+    dateOfBirth = fields.String()
+    gender = fields.String()
+    ethnicity = fields.String()
+    race = fields.String()
+    provinceOfResidence = fields.String()
 
-_BRAVADO_CONFIG = {
-    'validate_requests': False,
-    'validate_responses': False,
-    'use_models': True,
-    'validate_swagger_spec': False
-}
+class Biosample(Schema):
+    id = fields.String()
+    attributes = fields.String()
+    created = fields.String()
+    updated = fields.String()
+    description = fields.String()
+    disease = fields.String()
+    name = fields.String()
+    individualAgeAtCollection = fields.String()
+    datasetId = fields.String()
 
-_SWAGGER_SPEC = Spec.from_dict(_SPEC_DICT, config=_BRAVADO_CONFIG)
+class Error(Schema):
+    code = fields.Integer()
+    message = fields.String()
 
-#
-# Generate the Python models from the spec
-#
-
-BASEPATH = _SWAGGER_SPEC.flattened_spec['basePath']
-Error = _SWAGGER_SPEC.definitions['Error']  # pylint:disable=invalid-name
-Patient = _SWAGGER_SPEC.definitions['Patient']  # pylint:disable=invalid-name
-Biosample = _SWAGGER_SPEC.definitions['Biosample']  # pylint:disable=invalid-name
-Enrollment = _SWAGGER_SPEC.definitions['Enrollment']  # pylint:disable=invalid-name
+class Enrollment(Schema):
+    id = fields.String()
+    attributes = fields.String()
+    datasetId = fields.String()
+    created = fields.String()
+    format = fields.String()
+    updated = fields.String()
+    name = fields.String()
+    description = fields.String()
+    patientId = fields.String()
+    enrollmentApprovalDate = fields.String()
+    ageAtEnrollment = fields.String()
+    eligibilityCategory = fields.String()
+    primaryOncologistName = fields.String()
+    referringPhysicianName = fields.String()
+    referringPhysicianContact = fields.String()
+    summaryOfIdRequest = fields.String()
+    treatingCentreName = fields.String()
+    treatingCentreProvince = fields.String()
