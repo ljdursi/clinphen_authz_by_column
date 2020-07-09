@@ -1,36 +1,16 @@
-# Python Model Service
+# ClinPhen column-level authorization PoC
 
-Based on a CanDIG [OpenAPI variant service demo](https://github.com/ljdursi/openapi_calls_example), this toy service demonstrates the Python OpenAPI stack with CanDIG API best practices.
-
-[![Build Status](https://travis-ci.org/CanDIG/clinphen_service.svg?branch=master)](https://travis-ci.org/CanDIG/clinphen_service)
-[![CodeFactor](https://www.codefactor.io/repository/github/CanDIG/clinphen_service/badge)](https://www.codefactor.io/repository/github/CanDIG/clinphen_service)
-[![PyUp](https://pyup.io/repos/github/CanDIG/clinphen_service/shield.svg)](https://pyup.io/repos/github/CanDIG/clinphen_service/)
-[![Quay.io](https://quay.io/repository/candig/clinphen_service/status)](https://quay.io/repository/candig/clinphen_service)
-
-## Stack
-
-- [Connexion](https://github.com/zalando/connexion) for implementing the API
-- [SQLAlchemy](http://sqlalchemy.org), using [Sqlite3](https://www.sqlite.org/index.html) for ORM
-- [Bravado-core](https://github.com/Yelp/bravado-core) for Python classes from the spec
-- [Dredd](https://dredd.readthedocs.io/en/latest/) and [Dredd-Hooks-Python](https://github.com/apiaryio/dredd-hooks-python) for testing
-- Python 3
-- Pytest, tox
-- Travis-CI
+Based on the CanDIG v1 data model, its [mock data](https://github.com/CanDIG/mock-data-generator), and realistic-ish access levels
 
 ## Installation
 
 The server software can be installed in a virtual environment:
 
 ```
+virtualenv -p python3 columnauthz
+source columnauthz/bin/activate
 pip install -r requirements.txt
-pip install -r requirements_dev.txt
 python setup.py develop
-```
-
-for automated testing you can install dredd; assuming you already have node and npm installed,
-
-```
-npm install -g dredd
 ```
 
 ### Running
@@ -38,12 +18,28 @@ npm install -g dredd
 The server can be run with, for instance
 
 ```
-python3 -m clinphen_service --database=test.db --logfile=test.log --loglevel=WARN
+python3 -m clinphen_service
 ```
 
-For testing, the dredd config is currently set up to launch the service itself, so no server needs be running:
+and you can compare the results to the contents of data/registry.db.  Results are mocked up as coming back from OPA (will try to do that next).  The idea is
+that OPA would return the columns allowed for a given request, by dataset.  The user is supposed to have level 1 access to mock1 patients, enrollments, and level 3 to mock 2; and no access to biosamples information.  So for instance querying the patients resource, the column authorizations coming back would be:
 
+```json
+{
+    "mock1": ["id", "patientId", "attributes", "datasetId", "created", "updated", "name", "description", "provinceOfResidence"],
+    "mock2": ["id", "patientId", "attributes", "datasetId", "created", "updated", "name", "description", "dateOfBirth", "ethnicity", "race", "provinceOfResidence"]
+}
 ```
-cd tests
-dredd --hookfiles=dreddhooks.py
+
+(for simpliclity, not all columns are included).  
+
+You can play with the API as so:
+
+```bash
+curl http://localhost:3000/v1/patients/     # works - note that not all records include ethnicity, race, or DOB fields
+curl http://localhost:3000/v1/biosamples/   # authorizaiton fails, no authorization granted to any biosamples 
+curl http://localhost:3000/v1/patients/PATIENT_37990
+curl http://localhost:3000/v1/patients/PATIENT_37990/enrollments/
+curl -X POST -H 'Content-Type: application/json' -d '[{"field": "provinceOfResidence", "op": "=", "value": "Yukon"}]'  http://localhost:3000/v1/patients/
+curl -X POST -H 'Content-Type: application/json' -d '[{"field": "provinceOfResidence", "op": "=", "value": "Yukon"}, {"field": "dateOfBirth", "op": "=", "value": "1927-12-14"}]'  http://localhost:3000/v1/patients/ # note - filter will only succeed on mock2 records
 ```
