@@ -1,6 +1,6 @@
 connexion==2.4.0
 SQLAlchemy==1.3.11
-tornado==6.0.3
+tornado==6.3.2
 decorator==4.4.1
 flask-filter==0.1.0.dev3
 marshmallow==3.7.0
